@@ -63,9 +63,9 @@ export default function CurrentWeatherCard({
       </div>
 
       <div className="flex items-center gap-6 flex-wrap">
-        <div className="flex items-center md:w-7/20 w-full">
+        <div className="flex items-center md:w-7/20 w-full gap-4">
           <img
-            className="drop-shadow-2xl shadow-gray-500"
+            className="drop-shadow-2xl bg-blue-400 rounded-full"
             src={iconUrl}
             alt=""
           />

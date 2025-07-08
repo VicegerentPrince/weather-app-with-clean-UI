@@ -16,15 +16,15 @@ export default function ForecastWeatherCard({ value, unit }) {
   const formattedDate = `${day} ${month}, ${weekday}`;
 
   return (
-    <div className="bg-white/10 backdrop-blur-md border border-white/20 md:rounded-full rounded-md px-6 py-6 pr-14 shadow-md w-full md:h-1/8 h-full flex items-center justify-between">
-      <div className="flex items-center gap-6 md:flex-row flex-col">
-        <div className="flex items-center drop-shadow-2xl shadow-gray-500">
+    <div className="bg-white/10 backdrop-blur-md border border-white/20 md:rounded-full rounded-md md:px-6 md:py-6 md:pr-14 px-4 shadow-md md:w-full md:h-1/8 h-full flex items-center justify-between flex-col md:flex-row">
+      <div className="flex md:items-center gap-6 md:flex-row flex-col">
+        <div className="flex md:items-center drop-shadow-2xl gap-2 shadow-gray-500 flex-col md:flex-row">
           <img
-            className="drop-shadow-2xl shadow-gray-500"
+            className="drop-shadow-2xl bg-blue-400 rounded-full"
             src={`https://openweathermap.org/img/wn/${value.weather[0].icon}.png`}
             alt="weatherIcon"
           />
-          <h1 className="text-2xl poppins-semibold">
+          <h1 className="md:text-2xl text-xl poppins-semibold">
             {Math.floor(value.main.temp)}{" "}
             <sup className="text-black/60 poppins-medium text-sm">
               {unit == "metric" ? "°C" : "°F"}
@@ -36,12 +36,13 @@ export default function ForecastWeatherCard({ value, unit }) {
           <h1 className="text-sm text-black/60 poppins-regular">
             {value.weather[0].main}
           </h1>
-          <h1 className="text-sm poppins-regular">
+          <h1 className="text-sm poppins-regular md:block hidden">
             Feels Like {Math.floor(value.main.feels_like)}°
           </h1>
         </div>
       </div>
-      <div className="bg-black/40 h-8 w-[1px] absolute z-[-1] ml-66"></div>
+
+      <div className="bg-black/40 h-8 w-[1px] absolute z-[-1] ml-66 hidden md:block"></div>
 
       <div className="justify-self-end">
         <h1 className="text-sm text-black/60 poppins-regular">

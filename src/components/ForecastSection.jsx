@@ -15,7 +15,7 @@ export default function ForecastSection({ weather , unit}) {
         </div>
       </div>
 
-      <div className="md:overflow-y-scroll overflow-x-scroll scrollbar-thin flex md:flex-col gap-3">
+      <div className="md:overflow-y-scroll overflow-x-scroll scrollbar-thin flex h-full p-1 md:flex-col gap-3">
         {weather &&
           weather.forecast.list.map((value, index) => (
             <ForecastWeatherCard key={index} value={value} unit={unit}/>
